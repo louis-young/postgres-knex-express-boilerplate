@@ -1,7 +1,8 @@
-export const up = (knex) =>
-  knex.schema.createTable("users", (tbl) => {
-    tbl.increments();
-    tbl.text("name", 128).notNullable();
+exports.up = (knex) =>
+  knex.schema.createTable("users", (table) => {
+    table.increments();
+    table.text("name", 128).notNull();
+    table.text("email", 128).unique().notNull();
   });
 
-export const down = (knex) => knex.schema.dropTableIfExists("users");
+exports.down = (knex) => knex.schema.dropTableIfExists("users");

@@ -1,6 +1,6 @@
-import express from "express";
-import dotenv from "dotenv";
-import knex from "./knex/knex.js";
+const express = require("express");
+const dotenv = require("dotenv");
+const knex = require("./knex/knex");
 
 dotenv.config();
 
@@ -15,7 +15,7 @@ app.listen(PORT, () => console.log(`Server started on port ${PORT}.`));
 app.get("/users/:id", async (request, response) => {
   const { id } = request.params;
 
-  const customer = await knex("users").where({ id }).first();
+  const user = await knex("users").where({ id }).first();
 
-  response.json(customer);
+  response.json(user);
 });
