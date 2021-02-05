@@ -1,6 +1,6 @@
-const express = require("express");
-const dotenv = require("dotenv");
-const knex = require("./knex/knex");
+import express from "express";
+import dotenv from "dotenv";
+import knex from "./knex/knex.js";
 
 dotenv.config();
 

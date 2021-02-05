@@ -1,8 +1,8 @@
-const dotenv = require("dotenv");
+import dotenv from "dotenv";
 
 dotenv.config();
 
-module.exports = {
+const knexfile = {
   client: "postgresql",
   connection: {
     database: process.env.DATABASE,
@@ -14,3 +14,5 @@ module.exports = {
   },
   seeds: { directory: "./knex/seeds" },
 };
+
+export default knexfile;
