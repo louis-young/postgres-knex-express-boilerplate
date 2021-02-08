@@ -3,9 +3,9 @@ export const seed = (knex) => {
     .del()
     .then(() => {
       return knex("users").insert([
-        { name: "John", email: "john@domain.tld" },
-        { name: "Alan", email: "alan@domain.tld" },
-        { name: "Bob", email: "bob@domain.tld" },
+        { email: "john@domain.tld" },
+        { email: "alan@domain.tld" },
+        { email: "bob@domain.tld" },
       ]);
     });
 };
